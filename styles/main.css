@@ -3,8 +3,9 @@
 html, body {
     width: 100%;
     height: 100%;
-    font-family: cwTeXYen, Arimo;
+    font-family: Microsoft YaHei, Arimo;
 }
+/* cwTeXYen */
 
 #name{
   font-family: 'Righteous', cursive;
@@ -51,6 +52,11 @@ html, body {
 .logo-last {
     color: #0275d8;
     font-weight: bold;
+}
+
+#logoinline{
+  margin-top: 0px;
+  margin-bottom: 0px; 
 }
 
 .navbar-offset {
