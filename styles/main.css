@@ -56,7 +56,7 @@ html, body {
 
 #logoinline{
   margin-top: 0px;
-  margin-bottom: 0px; 
+  margin-bottom: 0px;
 }
 
 .navbar-offset {
@@ -178,4 +178,9 @@ border: none;
 }
 .display {
   display: block
+}
+
+#why{
+  padding-left: 10px;
+  padding-right: 10px;
 }
