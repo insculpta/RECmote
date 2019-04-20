@@ -7,6 +7,8 @@ var modeButtons = document.querySelectorAll(".button");
 var heartButton = document.querySelector(".button2");
 var mode1 = document.querySelector(".mode1");
 var mode2 = document.querySelector(".mode2");
+var ad = document.querySelector(".angledown");
+var au = document.querySelector(".angleup");
 
 
 for(var i = 0; i < modeButtons.length; i++) {
@@ -15,21 +17,36 @@ for(var i = 0; i < modeButtons.length; i++) {
 			this.classList.add("selected");
 			currentMode.classList.remove("selected");
 			currentMode = this;
-
 		}
-		// information.classList.remove("hidding");
-		// information.classList.add("display");
+
 		reset();
 	});
 }
 
+ad.addEventListener("click", function() {
+	if(ad.classList.contains("display")) {
+		 ad.classList.remove("display");
+		 ad.classList.add("hidding");
+		 au.classList.add("display");
+		 au.classList.remove("hidding");
+  	}
+  }
+)
+
+au.addEventListener("click", function() {
+	if(au.classList.contains("display")) {
+		 au.classList.remove("display");
+		 au.classList.add("hidding");
+		 ad.classList.add("display");
+		 ad.classList.remove("hidding");
+  	}
+  }
+)
+
 // var space= ''\n';
 function reset() {
     if(heartButton.classList.contains("selected")) {
-			// mode1.classList.remove("hidding");
-			// mode1.classList.add("display");
-			// console.log("1")
-			// information.textContent="hi heart \n a"
+
 			if(mode1.classList.contains("hidding")) {
 				 mode1.classList.remove("hidding");
 			}
@@ -44,12 +61,7 @@ function reset() {
 			}
 
     }else{
-			// information.classList.remove("check");
-			// console.log("2")
-			// information.textContent="hi"
-			// mode1.classList.add("hidding");
-			// mode2.classList.remove("hidding");
-			// mode2.classList.add("display");
+
 			if(mode1.classList.contains("display")) {
 				mode1.classList.remove("display");
 			}
