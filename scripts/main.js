@@ -9,6 +9,11 @@ var mode1 = document.querySelector(".mode1");
 var mode2 = document.querySelector(".mode2");
 var ad = document.querySelector(".angledown");
 var au = document.querySelector(".angleup");
+var ads = document.querySelector(".angledown2");
+var aus = document.querySelector(".angleup2");
+var adt = document.querySelector(".angledown3");
+var aut = document.querySelector(".angleup3");
+
 
 
 for(var i = 0; i < modeButtons.length; i++) {
@@ -42,6 +47,47 @@ au.addEventListener("click", function() {
   	}
   }
 )
+
+ads.addEventListener("click", function() {
+	if(ads.classList.contains("display")) {
+		 ads.classList.remove("display");
+		 ads.classList.add("hidding");
+		 aus.classList.add("display");
+		 aus.classList.remove("hidding");
+  	}
+  }
+)
+
+aus.addEventListener("click", function() {
+	if(aus.classList.contains("display")) {
+		 aus.classList.remove("display");
+		 aus.classList.add("hidding");
+		 ads.classList.add("display");
+		 ads.classList.remove("hidding");
+  	}
+  }
+)
+
+adt.addEventListener("click", function() {
+	if(adt.classList.contains("display")) {
+		 adt.classList.remove("display");
+		 adt.classList.add("hidding");
+		 aut.classList.add("display");
+		 aut.classList.remove("hidding");
+  	}
+  }
+)
+
+aut.addEventListener("click", function() {
+	if(aut.classList.contains("display")) {
+		 aut.classList.remove("display");
+		 aut.classList.add("hidding");
+		 adt.classList.add("display");
+		 adt.classList.remove("hidding");
+  	}
+  }
+)
+
 
 // var space= ''\n';
 function reset() {
