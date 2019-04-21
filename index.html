@@ -30,11 +30,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <title>RECmote</title>
 </head>
 
+
+
 <body data-spy="scroll" data-target="#nav">
+
+<script>
+    function show() {
+    let duration = 1000;
+    let d = document.getElementById("info");
+    let dtop = document.getElementById("banner-fg");
+    let y = 555;
+    // let initialY = document.body.scrollTop;
+    let initialY = 0;
+    let baseY = (initialY + y) * 0.5;
+    let difference = initialY - baseY;
+    let startTime = performance.now();
+
+    function step() {
+        let normalizedTime = (performance.now() - startTime) / duration;
+        if (normalizedTime > 1) normalizedTime = 1;
+
+        window.scrollTo(0, baseY + difference * Math.cos(normalizedTime * Math.PI));
+        if (normalizedTime < 1) window.requestAnimationFrame(step);
+    }
+
+    window.requestAnimationFrame(step);
+}
+</script>
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLDCDZ3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
    <nav class="navbar fixed-top navbar-toggleable navbar-light bg-faded">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -70,11 +98,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h2 class="lead banner-text">一手掌握多人錄音的手機錄音控制<span style="font-family:Arimo">APP</span>
 </h2>
                 <br>
-                <a id="inter_btn" class="btn btn-success btn-lg" href="#why">了解詳情</a>
+                <!-- <a id="inter_btn" class="btn btn-success btn-lg" href="#why" >了解詳情</a> -->
+                <a id="inter_btn" class="btn btn-success btn-lg" onclick="show()" >了解詳情</a>
             </div>
+            <a onclick="show()">
             <h2 class="banner-text">
                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </h2>
+           </a>
         </div>
     </header>
 
@@ -84,10 +115,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container  text-center">
         <div class="row justify-content-center">
             <div class="col col-sm-12">
-                <section>
+                <section >
                     <!-- <p id="why" style="color:black; font-size:1.5rem">RECmote 手機錄音神器</p> -->
-
-                    <div class="row justify-content-center align-items-center">
+                  <div id="info"> </div>
+                    <div  class="row justify-content-center align-items-center">
                         <p id="why" class="navbar-offset display-4 col-12 col-md-6 text-md-right" style="font-size:2.4rem; font-family:'Righteous',cursive;">&nbsp;&nbsp;RECmote
                         <span><img id= logoinline class="img-fluid"  src="images/logo.png"  height="65px" width="65px" ></span></p>
                         <p id="why" class="navbar-offset display-4 col-12 col-md-6 text-md-left" style="font-size:2.2rem; font-weight:bold">領夾麥錄音神器</p>
@@ -97,8 +128,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- <p class="lead"><span class="logo-first">Friendly</span><span class="logo-last">Alarm</span>, yet another social alarm that wakes you up on time, everyday.</p> -->
                 </section>
 
-				<section>
-                    <!-- <h2 id="feature" class="navbar-offset display-4">Solution</h2> -->
+				<section >
+                    <!-- <h2 id="feature" class="nav bar-offset display-4">Solution</h2> -->
 
                     <ol class="nav-item" style="margin:0 0; padding:0 0;">
                       <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"; style="padding: 0 0";> -->
@@ -341,7 +372,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <div style="margin: 30px 0px" >
             <!-- <p class="hidding mode1 check" style="font-size:1.2em">感謝您的支持!<br>有更多建議歡迎您填寫意見&nbsp;<i class="fas fa-angle-down"></i></p> -->
-            <p class="hidding mode1 check" >感謝您的支持!<br>有更多建議歡迎您填寫建議</p>
+            <p class="hidding mode1 check" >感謝您的支持!<br>有更多意見歡迎您填寫建議</p>
             <!-- <p class="hidding mode2 check" style="font-size:1.2em">感謝您的評價!<br>若您願意告訴我們原因，歡迎您填寫意見&nbsp;<i class="fas fa-angle-down"></i></p> -->
             <p class="hidding mode2 check">感謝您的評價!<br>若您願意告訴我們原因，歡迎您填寫建議</p>
           </div>
@@ -355,7 +386,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <footer id="footer" class=".navbar-offset" style="margin: 0 0">
         <section>
-            <h2 class="text-center">About us</h2>
+            <h2 class="text-center">About Us</h2>
         </section>
         <p class="text-center">-NTHU CS-<br>National Tsinghua University Computer Science<br>sam106062336@gapp.nthu.edu.tw</p>
     </footer>
