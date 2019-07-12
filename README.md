@@ -1,4 +1,4 @@
-This is a sample landing page for pitching a project idea called **RECmote** to the targeted audience. It is built by:
+This is a sample landing page for pitching a project idea called **"RECmote"** to the targeted audience. It is built by:
 
 - HTTP/CSS taught in the classes;
 - [Bootstrap 4 (alpha 6)](https://v4-alpha.getbootstrap.com/) for the responsive grid layout and components;
